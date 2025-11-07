@@ -10,6 +10,10 @@ body {
     line-height: 1.6;
 }
 
+.merriweather-font {
+    font-family: "Merriweather", serif !important;
+}
+
 .main-nav {
     background-color: #722F37;
     display: flex;
@@ -151,16 +155,25 @@ body {
 }
 
 .custom-carousel-btn {
-    background-color: var(--color-terracota);
-    border-color: var(--color-terracota);
-    color: #ffffff;
+    background-color: #722F37 !important;
+    border-color: #722F37 !important;
+    color: #ffffff !important;
     font-weight: 600;
     margin-top: 20px;
+    display: inline-block !important;
+    padding: 12px 24px !important;
+    font-size: 1.1rem !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
 }
 
 .custom-carousel-btn:hover {
-    background-color: #A34438;
-    border-color: #A34438;
+    background-color: #8B1538 !important;
+    border-color: #8B1538 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 /* Botón de reserva en footer */
 .reservation-button {
@@ -220,3 +233,91 @@ body {
     font-size: 0.9rem;
     font-weight: 300;
 }
+
+/* Variables CSS para responsive */
+:root {
+    --nav-padding: 10px 5%;
+    --logo-size: 120px;
+    --nav-font: 1.2rem;
+    --carousel-height: 70vh;
+    --caption-title: 2.5rem;
+    --caption-text: 1.2rem;
+    --footer-padding: 40px 5%;
+    --social-size: 2rem;
+}
+
+/* Media Queries Optimizadas */
+@media (max-width: 992px) {
+    :root {
+        --nav-padding: 8px 3%;
+        --logo-size: 100px;
+        --nav-font: 1.1rem;
+        --carousel-height: 60vh;
+        --caption-title: 2rem;
+        --caption-text: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-padding: 8px 2%;
+        --logo-size: 80px;
+        --nav-font: 1rem;
+        --carousel-height: 50vh;
+        --caption-title: 1.7rem;
+        --caption-text: 1rem;
+        --footer-padding: 30px 3%;
+        --social-size: 1.8rem;
+    }
+    
+    .main-nav .nav-links { gap: 10px; margin-right: 120px; margin-left: 15px; }
+    .menu-button { right: 15px; font-size: 0.9rem; }
+    .carousel-caption { bottom: 10%; padding: 15px; }
+    .btn-reservation { padding: 12px 24px; font-size: 1rem; }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --nav-padding: 10px 2%;
+        --logo-size: 70px;
+        --nav-font: 0.9rem;
+        --carousel-height: 40vh;
+        --caption-title: 1.4rem;
+        --caption-text: 0.9rem;
+        --footer-padding: 25px 2%;
+        --social-size: 1.6rem;
+    }
+    
+    .main-nav { flex-direction: column; min-height: auto; text-align: center; }
+    .logo { margin-bottom: 10px; }
+    .main-nav .nav-links { gap: 8px; margin: 0; flex-wrap: wrap; justify-content: center; }
+    .main-nav a { padding: 4px 8px; margin: 2px 4px; }
+    .menu-button { position: static; transform: none; margin-top: 10px; }
+    .carousel-caption { bottom: 5%; padding: 10px; }
+    .custom-carousel-btn { font-size: 0.9rem; padding: 8px 16px; }
+    .hero-section { padding: 40px 15px; }
+    .hero-section .container { padding: 25px; }
+    .hero-section p { font-size: 1rem; line-height: 1.6; }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --logo-size: 60px;
+        --nav-font: 0.85rem;
+        --carousel-height: 35vh;
+        --caption-title: 1.2rem;
+        --caption-text: 0.8rem;
+        --footer-padding: 20px 1%;
+        --social-size: 1.4rem;
+    }
+}
+
+/* Aplicar variables */
+.main-nav { padding: var(--nav-padding); }
+.logo { height: var(--logo-size); width: var(--logo-size); }
+.main-nav a { font-size: var(--nav-font); }
+.carousel-img { height: var(--carousel-height); }
+.carousel-caption h5 { font-size: var(--caption-title); }
+.carousel-caption p { font-size: var(--caption-text); }
+.main-footer { padding: var(--footer-padding); }
+.social-links a { font-size: var(--social-size); }
